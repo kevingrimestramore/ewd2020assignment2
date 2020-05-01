@@ -1,10 +1,12 @@
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import {
+    Mockgoose
+} from 'mockgoose';
+import {
     loadUsers,
     removeFavourites
 } from './seedData';
-import {Mockgoose} from 'mockgoose';
 
 dotenv.config();
 
@@ -13,12 +15,13 @@ if (process.env.NODE_ENV === 'test') {
     // use mockgoose for testing
     const mockgoose=new Mockgoose(mongoose);
     mockgoose.prepareStorage().then(()=>{
-      mongoose.connect(process.env.mongoDB);
+        mongoose.connect(process.env.mongoDB);
     });
-  } else {
+} else {
     // use the real deal for everything else
     mongoose.connect(process.env.mongoDB);
-  }
+}
+
 const db = mongoose.connection;
 
 db.on('error', (err) => {

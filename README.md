@@ -1,6 +1,7 @@
 # Assignment 2 - Web API.
 
 Name: Kevin Grimes
+(Note: Missing a good chunk of commit history - I had created a repo in a parent folder which contained my assignment 2 base folder but included folders with pieces of each lab's work as well as the pulled examples and had been making commits from there. It only dawned on me when testing assignment upload that pushing from there would upload loads of pointless files.)
 
 ## Overview
 

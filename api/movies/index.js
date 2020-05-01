@@ -2,7 +2,7 @@ import express from 'express';
 import {
   getMovies, getMovie, getMovieReviews
 } from '../tmdb-api';
-import wrap from 'express-async-wrapper';
+import Movie from './movieModel';
 
 const router = express.Router();
 
@@ -22,7 +22,9 @@ router.get('/:id/reviews', (req, res, next) => {
 });
 
 router.post('/:id/reviews', (req, res) => {
+  
   const id = parseInt(req.params.id);
+
   Movie.findByMovieDBId(id).then(movie => {
     movie.reviews.push(req.body)
     movie.save().then(res.status(200).send(movie.reviews))});
