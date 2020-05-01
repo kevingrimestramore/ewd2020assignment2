@@ -56,7 +56,7 @@ Authentication is handled using JWTs. Once login has been completed users are gr
 
 For development purposes there are 2 hardcoded users seeded into the API from launch with username - password credentials:
 
-user1 - test1
+user1 - test1 <br>
 user2 - test2
 
 (There is no persistence so once the application has been reset, any created login credentials are reset.)
