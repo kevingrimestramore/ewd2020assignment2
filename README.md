@@ -1,7 +1,7 @@
 # Assignment 2 - Web API.
 
 Name: Kevin Grimes
-(Note: Missing a good chunk of commit history - I had created a repo in a parent folder which contained my assignment 2 base folder but included folders with pieces of each lab's work as well as the pulled examples and had been making commits from there. It only dawned on me when testing assignment upload that pushing from there would upload loads of pointless files.)
+(Note: Missing a good chunk of commit history - I had created a repo in a parent folder which contained my assignment 2 base folder but included folders with pieces of each lab's work as well as the pulled examples and had been making commits from there. It only dawned on me when testing assignment upload that pushing from there would upload loads of pointless files. Made a new repo in correct folder to prevent pushing unnecessary files.)
 
 ## Overview
 
@@ -9,35 +9,39 @@ Give a brief overview of the Web API functionality.
 
 ## Installation Requirements
 
-Describe what needs to be on the machine to run the API (Node v?, NPM, MongoDB instance, any other 3rd party software not in the package.json). 
+In order to run the application installation of Node and Node Package Manager (npm) is required (https://nodejs.org/en/download/).
+App was developed using:
+Node v12.14.1
+npm  v6.13.4
 
-
-Describe getting/installing the software, perhaps:
-
-```bat
-git clone http:\myrepo.git
-```
-
-followed by installation
+Either download app using the ZIP download button above and unzip the file in a location of your choice; Or to install using git, open a terminal window in the folder you would lke to install the application within and run the command the command:
 
 ```bat
-git install
+git clone https://github.com/kevingrimestramore/ewd2020assignment2.git
 ```
+The rest of the dependences should be installed automatically later.
 
 ## API Configuration
-Describe any configuration that needs to take place before running the API. For example, creating an ``.env`` and what variables to put in it. Give an example of how this might be structured/done.
-REMEMBER: DON'T PUT YOUR OWN USERNAMES/PASSWORDS/AUTH KEYS IN THE READ.ME.
+Create a .env file in the source folder for the app and copy in the below variables inserting the revelant personal items. You will need to create a Movie DB account (https://www.themoviedb.org/) and acquire an authentication key to access the TMDB API. You will also need to create  MongoDB Cluster and insert the cluster URL.
 
 ```bat
 NODE_ENV=development
 PORT=8080
-HOST=
-mongoDB=YourMongoURL
+HOST=localhost
+SWAGGER_DOC=../movie-api-yaml/swagger.yaml
+TMDB_KEY=[INSERT_TMDB_KEY_HERE]
+mongoDB=[INSERT_MONGODB_CLUSTER_URL_HERE]
 seedDb=true
-secret=YourJWTSecret
+secret=ilikecake
 ```
 
 ## Startup
+Open a terminal window within the root directory of the application and run the command:
+
+```bat
+npm start
+```
+This starts the application, which can be restarted manually at any time by typing 'rs' in the running terminal window and pressing enter; The application can also be stopped by presing 'ctrl+C'.
 Describe how to start/stop the API. You could go though the ``scripts:`` property of the *package.json* file.
 
 ## API Design
@@ -50,9 +54,7 @@ Give an overview of your web API design. If you don't have a Swagger description
 | /api/movies/{movieid}/reviews | Get all reviews for movie | Create a new review for Movie | N/A | N/A  
 | ... | ... | ... | ... | ...
 
-If you have the API design on SwaggerHub or elsewhere, just link to Swagger:
-
-[SwaggerHub Doc](https://app.swaggerhub.com/apis-docs/fxwalsh/Movie/lab3)
+[SwaggerHub Doc](https://app.swaggerhub.com/apis/kevingrimestramore/Movie/initial)
 
 
 ## Security and Authentication
