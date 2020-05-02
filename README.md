@@ -52,7 +52,7 @@ As stated previously, the app dependecies are included in the package.json file 
 [SwaggerHub Doc](https://app.swaggerhub.com/apis/kevingrimestramore/Movie/initial)
 
 ## Security and Authentication
-Authentication is handled using JWTs. Once login has been completed users are granted an authorization token which is held in local storage on the front end. If requests are made to a protected route without possession of a valid token, users are redirected to a login page where they can login with valid credentials or sign up for access by providing a username and password after which they will be assigned an authorization token.
+Authentication is handled using JWTs. Once login has been completed users are granted an authorization token which is held in local storage on the front end. If requests are made to a protected route without possession of a valid token, users are redirected to a login page where they can login with valid credentials or sign up for access by providing a username and password after which they will be assigned an authorization token. For development, tokens are stored in local storage and the token in use can be removed by deleting it via your preferred browsers developer tools. This effectively logs a user out and if the page is refreshed after the token is removed while on a protected route the login prompt is displayed.
 
 For development purposes there are 2 hardcoded users seeded into the API from launch with username - password credentials:
 
