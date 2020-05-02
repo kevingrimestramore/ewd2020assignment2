@@ -31,7 +31,7 @@ Create a .env file in the source folder for the app and copy in the below variab
 NODE_ENV=development
 PORT=8080
 HOST=localhost
-SWAGGER_DOC=../movie-api-yaml/swagger.yaml
+SWAGGER_DOC=[SWAGGER_FILE_DIRECTORY]
 TMDB_KEY=[INSERT_TMDB_KEY_HERE]
 mongoDB=[INSERT_MONGODB_CLUSTER_URL_HERE]
 seedDb=true
