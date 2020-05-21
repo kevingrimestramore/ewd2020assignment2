@@ -5,7 +5,7 @@ import {
 } from 'mockgoose';
 import {
     loadUsers,
-    removeFavourites
+    removeFavorites
 } from './seedData';
 
 dotenv.config();
@@ -35,6 +35,6 @@ db.once('open', () => {
     console.log(`database connected to ${db.name} on ${db.host}`);
     if (process.env.NODE_ENV === 'development') {
         loadUsers();
-        removeFavourites();
+        removeFavorites();
     }
 })

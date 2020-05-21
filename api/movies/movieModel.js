@@ -2,10 +2,12 @@ import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
-const MovieReviewSchema = {
-  author : { type: String},
-  content : {type: String}
-}
+const MovieReviewSchema = [{
+  author : {type: String},
+  content : {type: String},
+  id : {type: String},
+  url : {type: String}
+}]
 
 const MovieSchema = new Schema({
     adult: { type: Boolean},

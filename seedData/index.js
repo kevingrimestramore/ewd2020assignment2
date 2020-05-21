@@ -23,8 +23,8 @@ export async function loadUsers() {
     }
   }
 
-  export async function removeFavourites() {
-    console.log('remove favourites');
+  export async function removeFavorites() {
+    console.log('remove favorites');
       try {
         await movieModel.deleteMany();
       } catch (err) {
